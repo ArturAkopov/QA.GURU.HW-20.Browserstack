@@ -10,12 +10,12 @@
 7. Сделать сборку в дженкинсе
   
 
-Для запуска тестов на Selenoid использовать команду ниже:
+Для запуска тестов на iPhone использовать команду ниже:
 ```shell
-gradle test -Denv=remote
+gradlew clean test -Denv=iPhone14ProMax
 ```
 
-Для запуска тестов локально использовать команду ниже:
+Для запуска тестов на Android использовать команду ниже:
 ```shell
-gradle test -Denv=local
+gradlew clean test -Denv=samsungGalaxyS22Ultra
 ```
