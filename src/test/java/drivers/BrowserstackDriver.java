@@ -22,11 +22,11 @@ public class BrowserstackDriver implements WebDriverProvider {
 
     @Nonnull
     @Override
-    public WebDriver createDriver(@Nonnull Capabilities capabilities) {
-        return getDriver();
+    public WebDriver createDriver(@Nonnull Capabilities caps) {
+        return getWebDriver();
     }
 
-    public WebDriver getDriver() {
+    public WebDriver getWebDriver() {
         MutableCapabilities caps = new MutableCapabilities();
 
         // Set your access credentials

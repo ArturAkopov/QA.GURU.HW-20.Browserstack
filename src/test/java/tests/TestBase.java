@@ -2,6 +2,7 @@ package tests;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.WebDriverRunner;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import config.BrowserStackConfig;
 import drivers.BrowserstackDriver;
@@ -25,10 +26,8 @@ public class TestBase {
 
     @BeforeAll
     static void beforeAll() {
-
+        WebDriverRunner.setWebDriver(new BrowserstackDriver(config).getWebDriver());
         Configuration.browserSize = null;
-        BrowserstackDriver pConf = new BrowserstackDriver(config);
-        pConf.getDriver();
         Configuration.browser = BrowserstackDriver.class.getName();
 
     }
