@@ -2,6 +2,7 @@ package drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
 import config.BrowserStackConfig;
+import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.WebDriver;
@@ -13,12 +14,11 @@ import java.net.URL;
 
 public class BrowserstackDriver implements WebDriverProvider {
 
-    private final BrowserStackConfig config;
-
-    public BrowserstackDriver(BrowserStackConfig config) {
-        this.config = config;
-    }
-
+    private static final BrowserStackConfig config =
+            ConfigFactory.create(
+                    BrowserStackConfig.class,
+                    System.getProperties()
+            );
 
     @Nonnull
     @Override
